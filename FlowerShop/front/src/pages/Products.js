@@ -1,17 +1,17 @@
-import Project from "../components/project/Project"
-import { test } from "../helpers/projectsList"
+import Product from "../components/product/Product"
+import { test } from "../helpers/productsList"
 
 
-export default function Projects () {
+export default function Products () {
     return (
         <main className="section">
             <div className="container">
                 <h2 className="title-1">Test</h2>
-                <ul className="projects">
+                <ul className="products">
                     
-                    {test.map((project, index) => {
+                    {test?.map((project, index) => {
                         return (
-                            <Project 
+                            <Product 
                                 key={index} 
                                 title={project.title}  
                                 img={project.img}

@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import BtnGitHub from "../components/btnGitGub/BtnGitHub";
-import { test } from "../helpers/projectsList";
+import { test } from "../helpers/productsList";
 import img from "../img/logo.png";
 
-export default function Project () {
+export default function Product () {
     const {id} = useParams();
     const project = test[id];
 

@@ -150,9 +150,9 @@ html, body {
     top: 1px;
 }
 
-/* Projects */
+/* products */
 
-.projects {
+.products {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -283,7 +283,7 @@ html, body {
         font-size: 30px;
     }
 
-    /* Projects */
+    /* products */
 
     .project__title {
         font-size: 22px;

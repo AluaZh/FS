@@ -1,12 +1,12 @@
 import Header from "../components/header/Header";
-import Projects from "./Projects";
+import Products from "./Products";
 
 export default function Home () {
     return (
         <>
             <Header />
 
-            <Projects />
+            <Products />
         </>
     )
 }

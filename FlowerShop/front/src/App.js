@@ -6,9 +6,9 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
+import Products from "./pages/Products";
 import Contacts from "./pages/Contacts";
-import Project from "./pages/Project";
+import Product from "./pages/Product";
 
 import ScrollToTop from "./utils/scrollToTop";
 
@@ -23,8 +23,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/project/:id" element={<Project />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
         <Footer /> 
