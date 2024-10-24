@@ -23,6 +23,8 @@ export default function Products () {
         return <div>Продукты не найдены</div>;
     }
 
+    console.log("products:", products)
+
     return (
         <main className="section">
             <div className="container">
@@ -30,16 +32,12 @@ export default function Products () {
                 <ul className="products">
                     {products.map((product, index) => (
                         <NavLink key={product.id} to={`/product/${product.id}`}>
-                            <li className="product">
-                                <img 
-                                    src={product.imgURL} 
-                                    alt={product.title} 
-                                    className="project__img" 
-                                />
-                                <h3 className="project__title">
-                                    {product.title}
-                                </h3>
-                            </li>
+                            <Product
+                                className="product" 
+                                title={product.title} 
+                                img={product.imgURL} 
+                                index={index} 
+                            />
                         </NavLink>
                     ))}
                 </ul>
