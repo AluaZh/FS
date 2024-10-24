@@ -6,7 +6,7 @@ import test02Big from "../img/logo.png"
 
 
 async function getProducts() {
-    const response = await fetch('http://localhost:8000/api/products/')
+    const response = await fetch('http://localhost:8000/products/')
     const data = response.json()
     return data
 }
