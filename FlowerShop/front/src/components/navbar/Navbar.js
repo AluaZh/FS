@@ -1,38 +1,64 @@
+// src/components/navbar/Navbar.js
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import BtnDarkMode from "../btnDarkMode/BtnDarkMode";
 import "./style.css";
-import logo from "../../img/logo.png"
+import logo from "../../img/logo.png";
+import { UserOutlined } from '@ant-design/icons';
+import { Avatar } from 'antd';
+import Modal from './Modal'; // Ensure this path is correct
 
-export default function Navbar () {
+const Navbar = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const handleAvatarClick = () => {
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     const activeLink = "nav-list__link nav-list__link--active";
     const normalLink = "nav-list__link";
 
     return (
-        <nav className="nav">
-            <div className="container">
-                <div className="nav-row">
+        <>
+            <nav className="nav">
+                <div className="container">
+                    <div className="nav-row">
+                        <NavLink to="/" className="logo">
+                            <img src={logo} alt="Logo" />
+                        </NavLink>
 
-                    <NavLink to="/" className="logo">
-                        <img src={logo}></img>
-                    </NavLink>
-                    
-                    <BtnDarkMode />
+                        <div className="nav-list-container">
+                            <ul className="nav-list">
+                                <li className="nav-list__item">
+                                    <NavLink to="/" className={({ isActive }) => (isActive ? activeLink : normalLink)}>Главная</NavLink>
+                                </li>
+                                <li className="nav-list__item">
+                                    <NavLink to="/products" className={({ isActive }) => (isActive ? activeLink : normalLink)}>Каталог</NavLink>
+                                </li>
+                                <li className="nav-list__item">
+                                    <NavLink to="/contacts" className={({ isActive }) => (isActive ? activeLink : normalLink)}>Не годен</NavLink>
+                                </li>
+                            </ul>
+                            {/* Place theme button next to nav list */}
+                            <div className="theme-button-container">
+                                <BtnDarkMode />
+                            </div>
+                        </div>
 
-                    <ul className="nav-list">
-                        <li className="nav-list__item">
-                            <NavLink to="/" className={({isActive}) => isActive ? activeLink : normalLink}>Home</NavLink>
-                        </li>
-                        <li className="nav-list__item">
-                            <NavLink to="/products" className={({isActive}) => isActive ? activeLink : normalLink}>Test</NavLink>
-                        </li>
-                        <li className="nav-list__item">
-                            <NavLink to="/contacts" className={({isActive}) => isActive ? activeLink : normalLink}>Contacts</NavLink>
-                        </li>
-                    </ul>
-
+                        <div className="avatar-container" onClick={handleAvatarClick}>
+                            <Avatar size={75} icon={<UserOutlined />} />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    )
-}
+            </nav>
+
+            {isModalOpen && <Modal onClose={closeModal} />}
+        </>
+    );
+};
+
+export default Navbar;

@@ -6,15 +6,15 @@ export default function Header () {
             <div className="header__wrapper">
 
             <h1 className="header__title">
-                <strong>Test <em></em></strong><br />
-                test
+                <strong>Цветы <em></em></strong><br />
+                красивые
             </h1>
 
             <div className="header__text">
                 <p></p>
             </div>
 
-            <a href="#" className="btn">Download</a>
+            <a href="#" className="btn">Заказать</a>
 
             </div>
         </header>
