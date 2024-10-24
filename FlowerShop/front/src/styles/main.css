@@ -156,8 +156,8 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 30px;
-    row-gap: 30px;
+    column-gap: 40px;
+    row-gap: 40px;
 }
 
 /* Project details */
